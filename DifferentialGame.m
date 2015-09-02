@@ -13,7 +13,7 @@ for i = 1:size(Volumes,1)
     V_normalized(i,:) = Volumes(i,:)./(vmax);
 end
 % Definimos las variables del problema
-T = 1;               % Esta variable es el horizonte de prediccion en horas
+T = 0.1;               % Esta variable es el horizonte de prediccion en horas
 tspan = t;           % Tiempo de simulacion definido en SWMM
 x0 = zeros(6,1);     % Los tanques empiezan descargados
 vmax = vmax/3600;    % El 3600 es por la integración utilizada
