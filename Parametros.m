@@ -23,12 +23,12 @@ T6 = {'C14'};
 [t, volume6] = swmm.read_results(T6, swmm.LINK, swmm.VOLUME);
 
 
-vmax(1) = sum(volume1(end,:));
-vmax(2) = sum(volume2(end,:));
-vmax(3) = sum(volume3(end,:));
-vmax(4) = sum(volume4(end,:));
-vmax(5) = sum(volume5(end,:));
-vmax(6) = sum(volume6(end,:));
+vmax(1) = sum(max(volume1));
+vmax(2) = sum(max(volume2));
+vmax(3) = sum(max(volume3));
+vmax(4) = sum(max(volume4));
+vmax(5) = sum(max(volume5));
+vmax(6) = sum(max(volume6));
 
 dt = t(end) - t(end-1);% dt = dt*3600; % hr -> s
 

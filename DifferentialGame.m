@@ -8,7 +8,7 @@ clc
 load('Parametros.mat'); %Cargamos las variables de lluvia del problema
 
 % Primero obtenemos el resultado sin control.
-vmax(6) = vmax(6);
+vmax(6) = vmax(6)/2.5;
 for i = 1:size(Volumes,1)
     V_normalized(i,:) = Volumes(i,:)./(vmax);
 end

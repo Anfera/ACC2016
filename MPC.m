@@ -8,7 +8,7 @@ clc
 load('Parametros.mat'); %Cargamos las variables de lluvia del problema
 
 % Primero obtenemos el resultado sin control.
-%vmax(6) = vmax(6)/2;
+vmax(6) = vmax(6)/2.5;
 for i = 1:size(Volumes,1)
     V_normalized(i,:) = Volumes(i,:)./(vmax);
 end
@@ -71,7 +71,7 @@ x = x0;
 for k = 1:N
  x = A*x + B*u{k};
  objective = objective + norm(Q*x,1) + norm(R*u{k},1);
- constraints = [constraints, 0 <= u{k}, 0<=x<=1];
+ constraints = [constraints, 0 <= u{k}, 0<=x];
 end
 
 ops = sdpsettings('verbose',0);
