@@ -1,9 +1,6 @@
 %% Control Based on differential Games
 % Este archivo resuelve el problema de volumenes normalizados en la red de
 % convergencia mediante un juego diferencial.
-clear all
-close all
-clc
 
 load('Parametros.mat'); %Cargamos las variables de lluvia del problema
 
@@ -104,28 +101,31 @@ for i = 1:length(tspan)-1
     v(i,:) = x(:,i).*vmax';
 end
 
+xdg = x;
+Udg = U;
+vdg = v;
 %% Plots
-figure
-subplot(2,1,2)	
-plot(t',x')
-legend(['v_1'; 'v_2'; 'v_3'; 'v_4'; 'v_5';'v_6']);
-ylabel('% of occupancy')
-xlabel('time [h]')
-subplot(2,1,1)
-stairs(t,V_normalized)
-legend(['v_1'; 'v_2'; 'v_3'; 'v_4'; 'v_5';'v_6']);
-xlabel('time [h]')
-ylabel('% of occupancy')
-title('Normalized Volumes')
-
-figure
-subplot(2,1,1)
-plot(t(1:end-1),3600*v)
-legend(['v_1'; 'v_2'; 'v_3'; 'v_4'; 'v_5';'v_6']);
-ylabel('volume [m^3]')
-title('Volumes and Outflows')
-subplot(2,1,2)
-stairs(t(1:end-1),U)
-legend(['q_1'; 'q_2'; 'q_3'; 'q_4'; 'q_5']);
-xlabel('time [h]')
-ylabel('flow [m^3/s]')
+% figure
+% subplot(2,1,2)	
+% plot(t',xdg')
+% legend(['v_1'; 'v_2'; 'v_3'; 'v_4'; 'v_5';'v_6']);
+% ylabel('% of occupancy')
+% xlabel('time [h]')
+% subplot(2,1,1)
+% stairs(t,V_normalized)
+% legend(['v_1'; 'v_2'; 'v_3'; 'v_4'; 'v_5';'v_6']);
+% xlabel('time [h]')
+% ylabel('% of occupancy')
+% title('Normalized Volumes')
+% 
+% figure
+% subplot(2,1,1)
+% plot(t(1:end-1),3600*vdg)
+% legend(['v_1'; 'v_2'; 'v_3'; 'v_4'; 'v_5';'v_6']);
+% ylabel('volume [m^3]')
+% title('Volumes and Outflows')
+% subplot(2,1,2)
+% stairs(t(1:end-1),Udg)
+% legend(['q_1'; 'q_2'; 'q_3'; 'q_4'; 'q_5']);
+% xlabel('time [h]')
+% ylabel('flow [m^3/s]')
