@@ -15,7 +15,7 @@ title('Normalized Volumes - Open loop')
 subplot(2,2,3)
 plot(t',xdg')
 legend(['v_1'; 'v_2'; 'v_3'; 'v_4'; 'v_5';'v_6']);
-ylabel('% of occupancy - DG')
+ylabel('% of occupancy')
 xlabel('time [h]')
 title('Normalized Volumes - DG')
 subplot(2,2,4)
