@@ -32,6 +32,7 @@ ylabel('run-off $$[m^3 / s]$$','Interpreter','latex','fontsize',12);
 h = figure(1);
 set(gca, 'FontSize', 20)
 hgexport(h,'Graficas/dist.pdf');
+close all
 
 %% Volumenes normalizados
 figure
@@ -55,6 +56,7 @@ ylabel('Normalized volume $$[\%]$$','Interpreter','latex','fontsize',12);
 h = figure(1);
 set(gca, 'FontSize', 20)
 hgexport(h,'Graficas/mpc.pdf');
+close all
 
 figure
 hold on
@@ -77,6 +79,7 @@ ylabel('Normalized volume $$[\%]$$','Interpreter','latex','fontsize',12);
 h = figure(1);
 set(gca, 'FontSize', 20)
 hgexport(h,'Graficas/dg.pdf');
+close all
 
 figure
 hold on
